@@ -85,11 +85,14 @@ def get_llm_model(provider: str, **kwargs):
             google_api_key=api_key,
         )
     elif provider == "ollama":
+        # Print log that Ollama is being used
+        print("Using Ollama for language model")
         return ChatOllama(
-            model=kwargs.get("model_name", "qwen2.5:7b"),
+            model=kwargs.get("model_name", "llama3.2"),
             temperature=kwargs.get("temperature", 0.0),
             num_ctx=kwargs.get("num_ctx", 32000),
             base_url=kwargs.get("base_url", "http://localhost:11434"),
+            disable_streaming=True,
         )
     elif provider == "azure_openai":
         if not kwargs.get("base_url", ""):
@@ -116,7 +119,7 @@ model_names = {
     "openai": ["gpt-4o", "gpt-4", "gpt-3.5-turbo"],
     "deepseek": ["deepseek-chat"],
     "gemini": ["gemini-2.0-flash-exp", "gemini-2.0-flash-thinking-exp", "gemini-1.5-flash-latest", "gemini-1.5-flash-8b-latest", "gemini-2.0-flash-thinking-exp-1219" ],
-    "ollama": ["qwen2.5:7b", "llama2:7b"],
+    "ollama": ["llama3.2","qwen2.5:7b", "llama2:7b"],
     "azure_openai": ["gpt-4o", "gpt-4", "gpt-3.5-turbo"]
 }
 
