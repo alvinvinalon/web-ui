@@ -119,7 +119,7 @@ model_names = {
     "openai": ["gpt-4o", "gpt-4", "gpt-3.5-turbo"],
     "deepseek": ["deepseek-chat"],
     "gemini": ["gemini-2.0-flash-exp", "gemini-2.0-flash-thinking-exp", "gemini-1.5-flash-latest", "gemini-1.5-flash-8b-latest", "gemini-2.0-flash-thinking-exp-1219" ],
-    "ollama": ["llama3.2","qwen2.5:7b", "llama2:7b"],
+    "ollama": ["llama3.2","qwen2.5:latest", "llama2:7b"],
     "azure_openai": ["gpt-4o", "gpt-4", "gpt-3.5-turbo"]
 }
 
